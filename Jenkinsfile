@@ -15,16 +15,6 @@
     }
 
     stages {
-        stage('AWS-CRED') {
-            steps{
-               withCreadentials([[
-                   $class: 'AmazonWebServiceCredentialsBinding',
-                    credentialsId: 'aws-creds',
-                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY_ID']]) {
-               }
-            }
-        }
 
         stage('git-Clone') {
 
