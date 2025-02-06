@@ -79,7 +79,7 @@
             steps {
           
                
-                sh "kubectl apply -f k8s-deploy.yml --validate=false"
+                sh "sudo KUBECONFIG=/root/.kube/config kubectl apply -f k8s-deploy.yml --validate=false"
 
             }
 
