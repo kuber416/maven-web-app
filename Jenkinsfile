@@ -17,6 +17,14 @@
 
     stages {
 
+        stage ('RUN as root') {
+          steps{
+           sh 'sudo su -'
+           sh ' 'whoami'
+           sh 'ls /root'
+          }
+        }
+
         stage('git-Clone') {
 
             steps {
@@ -82,7 +90,7 @@
 
             steps {
           
-
+               
                 sh "kubectl apply -f k8s-deploy.yml --validate=false"
 
             }
