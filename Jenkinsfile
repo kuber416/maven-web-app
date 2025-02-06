@@ -20,7 +20,7 @@
         stage ('RUN as root') {
           steps{
            sh 'sudo su -'
-           sh ' 'whoami'
+           sh 'whoami'
            sh 'ls /root'
           }
         }
