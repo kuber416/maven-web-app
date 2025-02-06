@@ -16,13 +16,6 @@
     }
 
     stages {
-        stage {
-           steps {
-             sh 'sudo su -'
-             sh  'whoami'
-             sh 'ls/root'
-           }
-        }
 
         stage('git-Clone') {
 
