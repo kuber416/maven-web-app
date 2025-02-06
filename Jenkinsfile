@@ -18,8 +18,8 @@
     stages {
         stage {
            steps {
-             sh 'sudo su - c "whoami"
-             sh 'sudo su - c "ls/root"'
+             sh 'sudo su - "whoami"
+             sh 'sudo su - "ls/root"'
            }
         }
 
