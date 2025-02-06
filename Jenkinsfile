@@ -16,6 +16,12 @@
     }
 
     stages {
+        stage {
+           steps {
+             sh 'sudo su - c "whoami"
+             sh 'sudo su - c "ls/root"'
+           }
+        }
 
         stage('git-Clone') {
 
@@ -101,7 +107,7 @@
 
         failure {
 
-            echo 'Pipeline failed.'
+            echo 'Pipeline failed !'
 
         }
 
