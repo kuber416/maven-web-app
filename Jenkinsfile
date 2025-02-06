@@ -17,14 +17,6 @@
 
     stages {
 
-        stage ('RUN as root') {
-          steps{
-           sh 'sudo su -'
-           sh 'whoami'
-           sh 'ls /root'
-          }
-        }
-
         stage('git-Clone') {
 
             steps {
@@ -49,7 +41,7 @@
 
             steps {
 
-                sh "docker build -t kuber416/maven-web-application:${TAG} ."
+                sh "docker build -t kuber416/mavenwebapp:${TAG} ."
 
             }
 
@@ -63,7 +55,7 @@
 
                     sh "docker login -u kuber416 -p ${DOCKER_HUB_PASSWORD}"
 
-                    sh "docker push kuber416/maven-web-application:${TAG}"
+                    sh "docker push kuber416/mavenwebapp:${TAG}"
 
                 }
 
