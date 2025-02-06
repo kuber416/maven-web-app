@@ -72,11 +72,7 @@
             }
 
         }
-        stage('Authenticate with EKS') {
-            steps{
-               sh "aws eks --region ap-south-1 update-kubeconfig --name devops-demo" 
-             }
-          }
+       
 
         stage('Deploy to kubernetes EKS') {
 
