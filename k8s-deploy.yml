@@ -5,7 +5,7 @@ metadata:
  name: mavenwebappdeployment
  namespace: demo-usecases
 spec:
- replicas: 2
+ replicas: 1
  strategy: 
     type: Recreate
  selector: 
@@ -19,7 +19,7 @@ spec:
   spec: 
     containers:
     - name: mavenwebappcontainer
-      image: ashokit/mavenwebapp
+      image: kuber416/mavenwebapp
       imagePullPolicy: Always
       ports:
       - containerPort: 8080
@@ -29,10 +29,11 @@ kind: Service
 metadata:
  name: mavenwebappsvc
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
    app: mavenwebapp
   ports:
    - port: 80
      targetPort: 8080
+     nodePort: 30080
 ...
