@@ -11,7 +11,7 @@
     environment {
 
         TAG = "${BUILD_NUMBER}"
-        KUBECONFIG = "/var/lib/jenkins/.kube/config"
+        KUBECONFIG = "/root/.kube/config"
        
     }
 
