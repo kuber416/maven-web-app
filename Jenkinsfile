@@ -11,6 +11,7 @@
     environment {
 
         TAG = "${BUILD_NUMBER}"
+        KUBECONFIG = credentials('kubeconfig-cred')
        
     }
 
